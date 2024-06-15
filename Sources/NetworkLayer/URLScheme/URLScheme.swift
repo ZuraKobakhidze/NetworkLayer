@@ -12,4 +12,6 @@
 public enum URLScheme: String {
     /// The HTTPS URL scheme.
     case https
+    /// The HTTP URL scheme.
+    case http
 }
