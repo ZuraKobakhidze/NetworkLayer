@@ -17,7 +17,7 @@ import Foundation
 ///     print("Network request failed: \(error)")
 /// }
 /// ```
-open class DefaultNetworkSession: NetworkSession {
+public final class DefaultNetworkSession: NetworkSession {
     /// The URL session used to perform network tasks.
     private let session: URLSession
     
@@ -36,7 +36,7 @@ open class DefaultNetworkSession: NetworkSession {
     /// - Parameter request: The URL request to be sent.
     /// - Returns: A tuple containing the response data and URL response.
     /// - Throws: An error if the network request fails.
-    open func dataTask(with request: URLRequest) async throws -> (Data, URLResponse) {
+    public func dataTask(with request: URLRequest) async throws -> (Data, URLResponse) {
         try await session.data(for: request)
     }
 }
