@@ -41,11 +41,6 @@
 /// }
 /// ```
 public protocol NetworkTokenProvider {
-    /// The current network token.
-    ///
-    /// This property holds the current token, which may be `nil` if no token is available.
-    var token: NetworkToken? { get set }
-    
     /// Returns the current token, fetching a new one if necessary.
     ///
     /// This method checks if the current token is valid. If it is, it returns the token.
@@ -54,23 +49,4 @@ public protocol NetworkTokenProvider {
     /// - Returns: The current valid token.
     /// - Throws: An error if the token cannot be retrieved.
     func getToken() async throws -> NetworkToken
-    
-    /// Fetches a new token from the server.
-    ///
-    /// This method should contain the implementation to request a new token from the server
-    /// and store it in the `token` property.
-    ///
-    /// - Returns: The newly fetched token.
-    /// - Throws: An error if the token cannot be fetched.
-    func fetchToken() async throws -> NetworkToken
-    
-    /// Refreshes the current token.
-    ///
-    /// This method should contain the implementation to refresh the token,
-    /// which typically involves making a network request to get a new token
-    /// based on the current token.
-    ///
-    /// - Returns: The refreshed token.
-    /// - Throws: An error if the token cannot be refreshed.
-    func refreshToken() async throws -> NetworkToken
 }

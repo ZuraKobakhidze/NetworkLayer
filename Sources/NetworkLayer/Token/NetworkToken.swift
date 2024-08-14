@@ -33,8 +33,7 @@ public protocol NetworkToken {
     /// The value of the token.
     ///
     /// This could be a bearer token, API key, or other forms of tokens used for authentication.
-    /// It can be `nil` if no token is available.
-    var value: String? { get }
+    var value: String { get }
     
     /// A Boolean value indicating whether the token is valid.
     ///
